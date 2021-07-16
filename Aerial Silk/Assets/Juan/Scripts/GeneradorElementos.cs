@@ -12,8 +12,8 @@ public class GeneradorElementos : MonoBehaviour
     [SerializeField]
     private float punto_inferor, punto_superior;
 
-    private float distancia_entre_lineas_tiempo = 1;
-    private float distancia_minima_entre_elementos = 1;
+    private float distancia_entre_lineas_tiempo = 2;
+    private float distancia_minima_entre_elementos = 2;
 
     private int nivel;
 
@@ -31,7 +31,7 @@ public class GeneradorElementos : MonoBehaviour
     {
         yield return new WaitForSeconds(distancia_entre_lineas_tiempo);
 
-        float punto_creacion= Random.Range(punto_inferor, punto_inferor + 2);
+        float punto_creacion = Random.Range(punto_inferor, punto_inferor + 2);
 
         // Se crean elementos hasta alcanzar el punto superior
         // segun los rangos de probabilidad se crean los diamantes, enemigos y vacio
@@ -43,15 +43,52 @@ public class GeneradorElementos : MonoBehaviour
 
             if (probabilidad > 4 && probabilidad < 6)
             {
-                GameObject instaciado = Instantiate(diamante_prefab);
-                instaciado.transform.parent = contenedor_dimantes.transform;
-                instaciado.transform.position = new Vector3(0, punto_creacion, 20);
+                if (contenedor_dimantes.transform.childCount < 8)
+                {
+                    GameObject instaciado = Instantiate(diamante_prefab);
+                    instaciado.transform.parent = contenedor_dimantes.transform;
+                    instaciado.transform.position = new Vector3(0, punto_creacion, 12);
+                }
+                else
+                {
+                    bool termino = false;
+                    for (int i = 0; i < contenedor_dimantes.transform.childCount && !termino; i++)
+                    {
+                        if (!contenedor_dimantes.transform.GetChild(i).gameObject.activeSelf)
+                        {
+                            contenedor_dimantes.transform.GetChild(i).gameObject.SetActive(true);
+                            termino = true;
+                            contenedor_dimantes.transform.GetChild(i).gameObject.SetActive(true);
+                            contenedor_dimantes.transform.GetChild(i).GetComponent<Diamante>().StartCoroutine("eliminar");
+                            contenedor_dimantes.transform.GetChild(i).transform.position = new Vector3(0, punto_creacion, 12);
+                        }
+                    }
+                }
+
             }
             else if (probabilidad > 6)
             {
-                GameObject instaciado = Instantiate(enemigo1_prefab);
-                instaciado.transform.parent = contenedor_enemigos.transform;
-                instaciado.transform.position = new Vector3(0, punto_creacion, 20);
+
+                if (contenedor_enemigos.transform.childCount < 8)
+                {
+                    GameObject instaciado = Instantiate(enemigo1_prefab);
+                    instaciado.transform.parent = contenedor_enemigos.transform;
+                    instaciado.transform.position = new Vector3(0, punto_creacion, 12);
+                }
+                else
+                {
+                    bool termino = false;
+                    for (int i = 0; i < contenedor_enemigos.transform.childCount && !termino; i++)
+                    {
+                        if (!contenedor_enemigos.transform.GetChild(i).gameObject.activeSelf)
+                        {
+                            contenedor_enemigos.transform.GetChild(i).gameObject.SetActive(true);
+                            termino = true;
+                            contenedor_enemigos.transform.GetChild(i).GetComponent<Enemigo>().StartCoroutine("eliminar");
+                            contenedor_enemigos.transform.GetChild(i).transform.position = new Vector3(0, punto_creacion, 12);
+                        }
+                    }
+                }
             }
             punto_creacion += distancia_minima_entre_elementos + Random.Range(0, 2);
         }
@@ -63,6 +100,6 @@ public class GeneradorElementos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
