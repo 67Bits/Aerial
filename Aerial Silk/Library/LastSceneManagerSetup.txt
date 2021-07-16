@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/InfiniteRunnerEngine/Demos/FlightOfTheAlbatross/FlightOfTheAlbatross.unity
+- path: Assets/InfiniteRunnerEngine/Demos/Downhill/Downhill.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
