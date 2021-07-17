@@ -19,14 +19,16 @@ public class PersonajeMovimiento : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
+            Debug.Log("click clack");
             //rg_personaje.velocity = Vector3.up * fuerza_movimiento;
             //anim.speed = 1;
-            anim.SetBool("subir", true);
+            anim.SetBool("up", true);
+
         }
         else if (Input.GetMouseButtonUp(0))
         {
             //anim.speed = 0;
-            anim.SetBool("subir", false);
+            anim.SetBool("up", false);
         }
     }
 }
