@@ -10,9 +10,8 @@ public class Diamante : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        juego_control = GameObject.FindGameObjectWithTag("juegoControl").GetComponent<JuegoControl>();
-        velocidad_movimiento = juego_control.velocidad_escenario;
-
+        //juego_control = GameObject.FindGameObjectWithTag("juegoControl").GetComponent<JuegoControl>();
+        //velocidad_movimiento = juego_control.velocidad_escenario;
     }
 
 

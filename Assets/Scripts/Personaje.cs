@@ -13,6 +13,7 @@ public class Personaje : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+
         if (nivelControl.vida > 0)
         {
             if (other.gameObject.layer == 9)
@@ -24,7 +25,7 @@ public class Personaje : MonoBehaviour
 
                 nivelControl.cargarPuntos(1);
             }
-            if (other.gameObject.layer == 8)
+            if (other.gameObject.layer == 10)
             {
                 //GameObject particula = Instantiate(particula_diamante1);
                 //particula.transform.position = other.transform.position;

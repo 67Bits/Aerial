@@ -13,6 +13,10 @@ public class PersonajeMovimiento : MonoBehaviour
     private Rigidbody rg_personaje_global;
     public Animator anim;
 
+    private Vector3 planeNormal;
+    private float radians;
+    private float degrees;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,11 +27,11 @@ public class PersonajeMovimiento : MonoBehaviour
     {
         if (nivelControl.vida > 0)
         {
-            transform.position += transform.forward * fuerza_movimiento * Time.deltaTime;
+
+
 
             if (Input.GetMouseButton(0))
             {
-                Debug.Log("click clack");
                 rg_personaje.velocity = Vector3.up * fuerza_movimiento;
                 //anim.speed = 1;
                 anim.SetBool("subir", true);
@@ -39,5 +43,17 @@ public class PersonajeMovimiento : MonoBehaviour
                 anim.SetBool("subir", false);
             }
         }
+    }
+
+    private void FixedUpdate()
+    {
+        if (nivelControl.vida > 0)
+        {
+
+            transform.position += transform.forward * fuerza_movimiento * Time.deltaTime; 
+
+         
+        }
+
     }
 }
