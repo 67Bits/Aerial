@@ -18,10 +18,22 @@ ModelImporter:
   - first:
       74: -4262448280611747074
     second: 3 pose
+  externalObjects:
   - first:
-      74: -5252816984213320552
-    second: idle
-  externalObjects: {}
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 0fa00b5a2dc6bb640af557020115313a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert3
+    second: {fileID: 2100000, guid: 49fe08a147edcee499347de81cb9cc45, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tela
+    second: {fileID: 2100000, guid: ac1068e3f9b3cbc4e83494d44c1cf178, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
