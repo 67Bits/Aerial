@@ -18,6 +18,9 @@ ModelImporter:
   - first:
       74: -4262448280611747074
     second: 3 pose
+  - first:
+      74: -5252816984213320552
+    second: idle
   externalObjects:
   - first:
       type: UnityEngine:Material
