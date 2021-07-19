@@ -15,7 +15,7 @@ public class Personaje : MonoBehaviour
     {
         if (nivelControl.vida > 0)
         {
-            if (other.gameObject.layer == 6)
+            if (other.gameObject.layer == 9)
             {
                 GameObject particula = Instantiate(particula_diamante1);
                 particula.transform.position = other.transform.position;
@@ -24,7 +24,7 @@ public class Personaje : MonoBehaviour
 
                 nivelControl.cargarPuntos(1);
             }
-            if (other.gameObject.layer == 7)
+            if (other.gameObject.layer == 8)
             {
                 //GameObject particula = Instantiate(particula_diamante1);
                 //particula.transform.position = other.transform.position;
