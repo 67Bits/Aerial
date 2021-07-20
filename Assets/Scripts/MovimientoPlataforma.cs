@@ -14,7 +14,7 @@ public class MovimientoPlataforma : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        velocidad_plataforma = juego_control.velocidad_escenario;
+       
         pos_inicial = transform.position;
     }
 
