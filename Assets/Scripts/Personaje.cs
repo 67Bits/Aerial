@@ -43,6 +43,7 @@ public class Personaje : MonoBehaviour
             // LLegada
             else if (other.gameObject.layer == 12)
             {
+                Debug.Log("ramaposa");
                 nivelControl.estado = 3;
                 nivelControl.canvasPrincipal.SetActive(false);
                 nivelControl.canvasVictoria.SetActive(true);
