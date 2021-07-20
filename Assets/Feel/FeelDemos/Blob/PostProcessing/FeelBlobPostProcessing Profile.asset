@@ -188,17 +188,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e6292b2c06870d4495f009f912b9600, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d073f09c04a999428a9149986800bfb, type: 3}
   m_Name: FeelBlobPostProcessing Profile
   m_EditorClassIdentifier: 
-  settings:
-  - {fileID: -4801146867868980174}
-  - {fileID: 5130381555465891008}
-  - {fileID: -3018003849268621899}
-  - {fileID: -6791308234853772717}
-  - {fileID: 2288471795314697083}
-  - {fileID: -6032347864367903530}
-  - {fileID: -8579890817792405255}
 --- !u!114 &2288471795314697083
 MonoBehaviour:
   m_ObjectHideFlags: 3
