@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MoreMountains.Feedbacks;
 
 public class Diamante : MonoBehaviour
 {
     private JuegoControl juego_control;
     private float velocidad_movimiento;
-
+    public MMFeedbacks RotateFeedback;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,5 +22,6 @@ public class Diamante : MonoBehaviour
         void Update()
     {
         transform.position += -transform.forward * velocidad_movimiento * Time.deltaTime;
+        RotateFeedback?.PlayFeedbacks();
     }
 }

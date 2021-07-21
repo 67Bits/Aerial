@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5509043, g: 0.76816624, b: 0.969986, a: 1}
+  m_IndirectSpecularColor: {r: 0.5509043, g: 0.7681663, b: 0.969986, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -121,12 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!198 &14569899 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 232229858107740308, guid: db22648a04ccdb8449ce5440e9235261,
-    type: 3}
-  m_PrefabInstance: {fileID: 232229858097103167}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &66257399
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +182,7 @@ Transform:
   - {fileID: 963894732}
   - {fileID: 1280414618}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &426930069
 GameObject:
@@ -308,8 +302,8 @@ MonoBehaviour:
     CurvePingPong: 0
     PauseMin: 0
     PauseMax: 0
-    LimitedTime: 0
-    LimitedTimeTotal: 0
+    LimitedTime: 1
+    LimitedTimeTotal: 2
     LimitedTimeFalloff:
       serializedVersion: 2
       m_Curve:
@@ -335,7 +329,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     LimitedTimeResetValue: 1
-    LimitedTimeLeft: 0
+    LimitedTimeLeft: 2
     NoiseFrequencyMin: {x: 0.5, y: 0.5, z: 0.5}
     NoiseFrequencyMax: {x: 0.5, y: 0.5, z: 0.5}
     NoiseShiftMin: {x: 0, y: 0, z: 0}
@@ -408,8 +402,8 @@ MonoBehaviour:
     CurvePingPong: 0
     PauseMin: 0
     PauseMax: 0
-    LimitedTime: 0
-    LimitedTimeTotal: 0
+    LimitedTime: 1
+    LimitedTimeTotal: 2
     LimitedTimeFalloff:
       serializedVersion: 2
       m_Curve:
@@ -435,7 +429,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     LimitedTimeResetValue: 1
-    LimitedTimeLeft: 0
+    LimitedTimeLeft: 2
     NoiseFrequencyMin: {x: 0.2, y: 0.2, z: 0.2}
     NoiseFrequencyMax: {x: 0.2, y: 0.2, z: 0.2}
     NoiseShiftMin: {x: 0, y: 0, z: 0}
@@ -508,8 +502,8 @@ MonoBehaviour:
     CurvePingPong: 0
     PauseMin: 0
     PauseMax: 0
-    LimitedTime: 0
-    LimitedTimeTotal: 0
+    LimitedTime: 1
+    LimitedTimeTotal: 2
     LimitedTimeFalloff:
       serializedVersion: 2
       m_Curve:
@@ -535,7 +529,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     LimitedTimeResetValue: 1
-    LimitedTimeLeft: 0
+    LimitedTimeLeft: 2
     NoiseFrequencyMin: {x: 0, y: 0, z: 0}
     NoiseFrequencyMax: {x: 1, y: 1, z: 1}
     NoiseShiftMin: {x: 0, y: 0, z: 0}
@@ -1078,12 +1072,6 @@ MonoBehaviour:
   MinPitch: 1
   MaxPitch: 2
   SfxAudioMixerGroup: {fileID: 0}
---- !u!198 &1031576571 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 232229858453920452, guid: db22648a04ccdb8449ce5440e9235261,
-    type: 3}
-  m_PrefabInstance: {fileID: 232229858097103167}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1183306506
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,7 +1106,7 @@ Transform:
   - {fileID: 449868782}
   - {fileID: 674711167}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1280414617
 GameObject:
@@ -1245,7 +1233,6 @@ MonoBehaviour:
   - {fileID: 1280414619}
   - {fileID: 1280414638}
   - {fileID: 1280414634}
-  - {fileID: 0}
   - {fileID: 1280414630}
   - {fileID: 1280414626}
   - {fileID: 1280414625}
@@ -1395,7 +1382,7 @@ MonoBehaviour:
     Quantized: 0
     TargetBPM: 120
   DebugActive: 0
-  BoundParticleSystem: {fileID: 1031576571}
+  BoundParticleSystem: {fileID: 0}
   MoveToPosition: 0
   RandomParticleSystems: []
 --- !u!114 &1280414624
@@ -1431,7 +1418,7 @@ MonoBehaviour:
     Quantized: 0
     TargetBPM: 120
   DebugActive: 0
-  BoundParticleSystem: {fileID: 1903519440}
+  BoundParticleSystem: {fileID: 0}
   MoveToPosition: 0
   RandomParticleSystems: []
 --- !u!114 &1280414625
@@ -1467,7 +1454,7 @@ MonoBehaviour:
     Quantized: 0
     TargetBPM: 120
   DebugActive: 0
-  BoundParticleSystem: {fileID: 14569899}
+  BoundParticleSystem: {fileID: 0}
   MoveToPosition: 0
   RandomParticleSystems: []
 --- !u!114 &1280414626
@@ -2528,7 +2515,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: ed39e8628ea328e4886e587c5ed18d35, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7286,7 +7272,7 @@ Transform:
   m_Children:
   - {fileID: 1692383944}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1500826018
 GameObject:
@@ -7947,12 +7933,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!198 &1903519440 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 232229857313646575, guid: db22648a04ccdb8449ce5440e9235261,
-    type: 3}
-  m_PrefabInstance: {fileID: 232229858097103167}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2097948596
 GameObject:
   m_ObjectHideFlags: 0
@@ -8164,7 +8144,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1275389053828271
 GameObject:
