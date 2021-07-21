@@ -12,6 +12,11 @@ public class Personaje : MonoBehaviour
 
     public Animator animacion_personaje;
 
+    private bool condiamante = false;
+
+    public PersonajeMovimiento personajeMovimiento;
+
+
     public void OnTriggerEnter(Collider other)
     {
 
@@ -20,14 +25,26 @@ public class Personaje : MonoBehaviour
             // Diamantes
             if (other.gameObject.layer == 9)
             {
+                nivelControl.hacerDaño(-1);
                 GameObject particula = Instantiate(particula_diamante1);
                 particula.transform.position = other.transform.position;
-                Destroy(other.gameObject);
-                //other.gameObject.SetActive(false);
+                //Destroy(other.gameObject);
+                other.gameObject.SetActive(false);
+                nivelControl.objetos_desaparecidos.Add(other.gameObject);
 
                 nivelControl.cargarPuntos(1);
-                animacion_personaje.SetInteger("diamante",Random.Range(1,3));
-                Invoke("desactivarAnimacionDiamantes", 0.2f);
+                condiamante = true;
+                animacion_personaje.ResetTrigger("subir");
+                animacion_personaje.ResetTrigger("bajar");
+                animacion_personaje.ResetTrigger("Idle");
+
+                animacion_personaje.SetInteger("diamante", Random.Range(1, 3));
+
+                personajeMovimiento.bloqueado = true;
+                Physics.gravity = Vector3.zero;
+                personajeMovimiento.rg_personaje.velocity = Vector3.zero;
+                StopAllCoroutines();
+                StartCoroutine("desactivarAnimacionDiamantes");
             }
             // Tijeras
             else if (other.gameObject.layer == 10)
@@ -35,6 +52,7 @@ public class Personaje : MonoBehaviour
                 //GameObject particula = Instantiate(particula_diamante1);
                 //particula.transform.position = other.transform.position;
                 other.gameObject.SetActive(false);
+                nivelControl.objetos_desaparecidos.Add(other.gameObject);
 
                 nivelControl.hacerDaño(1);
                 //nivelControl.puntos_nivel++;
@@ -43,7 +61,6 @@ public class Personaje : MonoBehaviour
             // LLegada
             else if (other.gameObject.layer == 12)
             {
-                Debug.Log("ramaposa");
                 nivelControl.estado = 3;
                 nivelControl.canvasPrincipal.SetActive(false);
                 nivelControl.canvasVictoria.SetActive(true);
@@ -56,15 +73,40 @@ public class Personaje : MonoBehaviour
         }
     }
 
-    public void desactivarAnimacionDiamantes()
+    IEnumerator desactivarAnimacionDiamantes()
     {
-        animacion_personaje.SetInteger("diamante",0);
+        yield return new WaitForSeconds(0.4f);
+        Physics.gravity = new Vector3(0, -9.8f, 0);
+        personajeMovimiento.bloqueado = false;
+        condiamante = false;
+        animacion_personaje.SetInteger("diamante", 0);
     }
-    private void Update()
+
+    //public void desactivarAnimacionDiamantes()
+    //{
+
+    //}
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.layer == 13 && !condiamante)
+    //    {
+    //        animacion_personaje.SetTrigger("Idle");
+    //    }
+    //}
+    private void OnCollisionStay(Collision collision)
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (collision.gameObject.layer == 13 && !condiamante && nivelControl.vida > 0)
         {
-            shake.GenerateImpulse();
+            animacion_personaje.SetTrigger("Idle");
         }
     }
+
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    if (collision.gameObject.layer == 13)
+    //    {
+    //        animacion_personaje.ResetTrigger("Idle");
+    //    }
+    //}
 }

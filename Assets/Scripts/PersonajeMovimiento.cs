@@ -9,7 +9,7 @@ public class PersonajeMovimiento : MonoBehaviour
     public float fuerza_movimiento;
     public float velocidad_movimiento_principal;
     [SerializeField]
-    private Rigidbody rg_personaje;
+    public Rigidbody rg_personaje;
     [SerializeField]
     private Rigidbody rg_personaje_global;
     public Animator anim;
@@ -23,7 +23,7 @@ public class PersonajeMovimiento : MonoBehaviour
 
     Vector3 pendiente_direccion_movimiento;
 
-
+    public bool bloqueado = false;
 
     // Start is called before the first frame update
     void Start()
@@ -53,22 +53,26 @@ public class PersonajeMovimiento : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (nivelControl.estado == 2)
+        if (nivelControl.estado == 2 && !bloqueado)
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0) && !bloqueado)
             {
                 rg_personaje.velocity = Vector3.up * fuerza_movimiento;
                 //anim.speed = 1;
+                anim.SetTrigger("subir");
+                anim.ResetTrigger("Idle");
             }
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && !bloqueado)
             {
-                anim.SetBool("subir", true);
+                anim.SetTrigger("subir");
+                anim.ResetTrigger("Idle");
             }
-            else if (Input.GetMouseButtonUp(0))
+            else if (Input.GetMouseButtonUp(0) && !bloqueado)
             {
                 //anim.speed = 0;
-                anim.SetBool("subir", false);
+                anim.SetTrigger("bajar");
+                anim.ResetTrigger("Idle");
             }
         }
     }
