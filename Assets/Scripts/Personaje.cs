@@ -61,6 +61,7 @@ public class Personaje : MonoBehaviour
             // LLegada
             else if (other.gameObject.layer == 12)
             {
+                other.gameObject.SetActive(false);
                 nivelControl.estado = 3;
                 nivelControl.canvasPrincipal.SetActive(false);
                 nivelControl.canvasVictoria.SetActive(true);
@@ -68,7 +69,8 @@ public class Personaje : MonoBehaviour
                 nivelControl.agregarDiamantesTotales();
                 nivelControl.txt_diamantes.text = "Level Diamonds: " + (nivelControl.puntos_nivel).ToString() + "\nAll Diamonds: " + (nivelControl.juegoControl.diamantes_totales).ToString();
 
-                // TO DO: Colocar animación victoria
+                animacion_personaje.SetTrigger("victoria");
+
             }
         }
     }

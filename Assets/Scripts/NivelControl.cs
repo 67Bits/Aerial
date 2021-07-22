@@ -6,6 +6,7 @@ using TMPro;
 
 public class NivelControl : MonoBehaviour
 {
+    [HideInInspector]
     public JuegoControl juegoControl;
 
     public GameObject personaje_objeto;
@@ -26,9 +27,7 @@ public class NivelControl : MonoBehaviour
     public Animator animacion_personaje;
 
 
-    public List<GameObject> niveles;
-    public int nivel = 0;
-    public float largoactual_nivel;
+    public float largoactual_nivel = 0;
 
     public Slider sliderProgreso;
 
@@ -37,11 +36,12 @@ public class NivelControl : MonoBehaviour
 
     public List<GameObject> objetos_desaparecidos;
 
+    public GameObject plataforma;
+
     public void cargarPuntos(int numeroPuntos)
     {
         puntos_nivel += numeroPuntos;
         txt_puntos.text = puntos_nivel.ToString();
-
     }
 
     public void aparecerobjetos()
@@ -109,14 +109,22 @@ public class NivelControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        estado = 1;
-        txt_puntos.text = puntos_nivel.ToString();
-        txt_nivel.text = "Level " + (nivel + 1).ToString();
-        txt_nivel_inicio.text = "Level " + (nivel + 1).ToString();
+        juegoControl = GameObject.FindGameObjectWithTag("juegoControl").GetComponent<JuegoControl>();
 
-        niveles[nivel].SetActive(true);
-        largoactual_nivel = niveles[nivel].GetComponent<Nivel>().distancia_a_meta;
+        estado = 1;
+        vida = 5;
+        txt_puntos.text = puntos_nivel.ToString();
+        txt_nivel.text = "Level " + (juegoControl.nivel_real).ToString();
+        txt_nivel_inicio.text = "Level " + (juegoControl.nivel_real).ToString();
+
+        Invoke("actualizarInfoNivel", 0.1f);
         actualizarTelas();
+    }
+    public void actualizarInfoNivel()
+    {
+        largoactual_nivel = juegoControl.niveles[juegoControl.nivel - 1].distancia_a_meta;
+        txt_nivel.text = "Level " + (juegoControl.nivel_real).ToString();
+        txt_nivel_inicio.text = "Level " + (juegoControl.nivel_real).ToString();
     }
 
     public void agregarDiamantesTotales()
@@ -127,6 +135,6 @@ public class NivelControl : MonoBehaviour
 
     public void FixedUpdate()
     {
-        sliderProgreso.value = (personaje_objeto.transform.position.z * 100) / largoactual_nivel;
+        sliderProgreso.value = (-plataforma.transform.position.z * 100) / largoactual_nivel;
     }
 }

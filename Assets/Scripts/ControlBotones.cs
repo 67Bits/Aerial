@@ -6,45 +6,24 @@ using UnityEngine.SceneManagement;
 public class ControlBotones : MonoBehaviour
 {
     public NivelControl nivelControl;
-    
+
+    private JuegoControl juegoControl;
 
     public void reiniciar()
     {
-        nivelControl.niveles[nivelControl.nivel].SetActive(true);
-        nivelControl.aparecerobjetos();
-        nivelControl.personaje_objeto.transform.position = Vector3.zero;
-
-        nivelControl.estado = 1;
-        nivelControl.canvasPrincipal.SetActive(false);
-        nivelControl.canvasVictoria.SetActive(false);
-        nivelControl.canvasPerdida.SetActive(false);
-        nivelControl.canvasInicio.SetActive(true);
-
-        nivelControl.puntos_nivel = 0;
-        nivelControl.txt_nivel.text = "Level " + (nivelControl.nivel + 1).ToString();
-        nivelControl.txt_nivel_inicio.text = "Level " + (nivelControl.nivel + 1).ToString();
-        nivelControl.vida = 5;
+        SceneManager.LoadScene(juegoControl.niveles[juegoControl.nivel - 1].ref_nivel);
     }
 
     public void pasarNivel()
     {
-        nivelControl.niveles[nivelControl.nivel].SetActive(false);
-        nivelControl.nivel++;
-        nivelControl.niveles[nivelControl.nivel].SetActive(true);
-        nivelControl.largoactual_nivel = nivelControl.niveles[nivelControl.nivel].GetComponent<Nivel>().distancia_a_meta;
-
-        nivelControl.personaje_objeto.transform.position = Vector3.zero;
-
-        nivelControl.estado = 1;
-        nivelControl.canvasPrincipal.SetActive(false);
-        nivelControl.canvasVictoria.SetActive(false);
-        nivelControl.canvasInicio.SetActive(true);
-
-        nivelControl.puntos_nivel = 0;
-        nivelControl.txt_nivel.text = "Level " + (nivelControl.nivel+1).ToString();
-        nivelControl.txt_nivel_inicio.text = "Level " + (nivelControl.nivel+1).ToString();
-
-        nivelControl.vida = 5;
+        juegoControl.nivel++;
+        juegoControl.nivel_real++;
+       
+        if (juegoControl.nivel > 5)
+        {
+            juegoControl.nivel = Random.Range(1, 5);
+        }
+        SceneManager.LoadScene(juegoControl.niveles[juegoControl.nivel-1].ref_nivel);
     }
 
     public void pausar()
@@ -58,5 +37,9 @@ public class ControlBotones : MonoBehaviour
             Time.timeScale = 1;
 
         }
+    }
+    public void Start()
+    {
+        juegoControl = nivelControl.juegoControl;
     }
 }
