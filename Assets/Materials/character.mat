@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: a01a6c5581d26424fb411a0b561e27e8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 29fc94eb908d7f54bbca9f9f5515b75f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -129,6 +129,7 @@ Material:
     - _Outline: 1
     - _OutlineLightingType: 0
     - _OutlineLightingTypeURP: 0
+    - _OutlineMaxWidth: 1
     - _OutlineMinWidth: 1
     - _OutlinePixelSizeType: 0
     - _OutlineTextureLOD: 5
@@ -149,6 +150,7 @@ Material:
     - _RenderingMode: 0
     - _RimMax: 1.37
     - _RimMin: 0.89
+    - _ShadowColorLightAtten: 1
     - _SingleIndirectColor: 0
     - _SketchHalftoneMax: 1
     - _SketchHalftoneMin: 0.2
