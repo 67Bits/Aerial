@@ -5,6 +5,7 @@ using Cinemachine;
 public class Personaje : MonoBehaviour
 {
     public NivelControl nivelControl;
+
     [SerializeField]
     private GameObject particula_diamante1;
 
@@ -19,7 +20,6 @@ public class Personaje : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-
         if (nivelControl.vida > 0)
         {
             // Diamantes
@@ -28,9 +28,8 @@ public class Personaje : MonoBehaviour
                 nivelControl.hacerDaño(-1);
                 GameObject particula = Instantiate(particula_diamante1);
                 particula.transform.position = other.transform.position;
-                //Destroy(other.gameObject);
+
                 other.gameObject.SetActive(false);
-                nivelControl.objetos_desaparecidos.Add(other.gameObject);
 
                 nivelControl.cargarPuntos(1);
                 condiamante = true;
@@ -49,13 +48,11 @@ public class Personaje : MonoBehaviour
             // Tijeras
             else if (other.gameObject.layer == 10)
             {
-                //GameObject particula = Instantiate(particula_diamante1);
-                //particula.transform.position = other.transform.position;
+               
                 other.gameObject.SetActive(false);
-                nivelControl.objetos_desaparecidos.Add(other.gameObject);
 
                 nivelControl.hacerDaño(1);
-                //nivelControl.puntos_nivel++;
+
                 shake.GenerateImpulse();
             }
             // LLegada
@@ -70,6 +67,8 @@ public class Personaje : MonoBehaviour
                 nivelControl.txt_diamantes.text = "Level Diamonds: " + (nivelControl.puntos_nivel).ToString() + "\nAll Diamonds: " + (nivelControl.juegoControl.diamantes_totales).ToString();
 
                 animacion_personaje.SetTrigger("victoria");
+                nivelControl.particulavictoria1.SetActive(true);
+                nivelControl.particulavictoria2.SetActive(true);
 
             }
         }
@@ -84,18 +83,7 @@ public class Personaje : MonoBehaviour
         animacion_personaje.SetInteger("diamante", 0);
     }
 
-    //public void desactivarAnimacionDiamantes()
-    //{
-
-    //}
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.layer == 13 && !condiamante)
-    //    {
-    //        animacion_personaje.SetTrigger("Idle");
-    //    }
-    //}
+  
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.layer == 13 && !condiamante && nivelControl.vida > 0)
@@ -104,11 +92,5 @@ public class Personaje : MonoBehaviour
         }
     }
 
-    //private void OnCollisionExit(Collision collision)
-    //{
-    //    if (collision.gameObject.layer == 13)
-    //    {
-    //        animacion_personaje.ResetTrigger("Idle");
-    //    }
-    //}
+ 
 }

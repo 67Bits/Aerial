@@ -9,49 +9,56 @@ public class NivelControl : MonoBehaviour
     [HideInInspector]
     public JuegoControl juegoControl;
 
-    public GameObject personaje_objeto;
 
+    [HideInInspector]
     public int puntos_nivel = 0;
-
+    [HideInInspector]
     public int vida = 1;
     // estado 1 : Juego no ha empezado; estado 2: Juego inicio; estado 3: llego a la meta; 
+    [HideInInspector]
     public int estado = 1;
+         
+    [Header("Anexos Personaje")]
+    public Animator animacion_personaje;
+    public GameObject personaje_objeto;
 
+    [HideInInspector]
+    public float largoactual_nivel = 0;
+
+    [Header("Anexos textura tela")]
+    public SkinnedMeshRenderer tela1, tela2;
+    public Material m1, m2, m3, m4, m5;
+
+    //[HideInInspector]
+    //public List<GameObject> objetos_desaparecidos;
+
+    [Header("Otros Anexos")]
+    public GameObject plataforma;
+
+    [Header("Anexos Efectos")]
+    public GameObject particulavictoria1, particulavictoria2;
+
+    [Header("Anexos interfaz")]
     public TextMeshProUGUI txt_puntos;
     public TextMeshProUGUI txt_nivel;
     public TextMeshProUGUI txt_nivel_inicio;
     public TextMeshProUGUI txt_diamantes;
-
     public GameObject canvasPrincipal, canvasPerdida, canvasInicio, canvasVictoria;
-
-    public Animator animacion_personaje;
-
-
-    public float largoactual_nivel = 0;
-
     public Slider sliderProgreso;
-
-    public SkinnedMeshRenderer tela1, tela2;
-    public Material m1, m2, m3, m4, m5;
-
-    public List<GameObject> objetos_desaparecidos;
-
-    public GameObject plataforma;
-
     public void cargarPuntos(int numeroPuntos)
     {
         puntos_nivel += numeroPuntos;
         txt_puntos.text = puntos_nivel.ToString();
     }
 
-    public void aparecerobjetos()
-    {
-        for (int i = 0; i < objetos_desaparecidos.Count; i++)
-        {
-            objetos_desaparecidos[i].SetActive(true);
-        }
-        objetos_desaparecidos = new List<GameObject>();
-    }
+    //public void aparecerobjetos()
+    //{
+    //    for (int i = 0; i < objetos_desaparecidos.Count; i++)
+    //    {
+    //        objetos_desaparecidos[i].SetActive(true);
+    //    }
+    //    objetos_desaparecidos = new List<GameObject>();
+    //}
 
     public void hacerDaño(int numeroDaño)
     {

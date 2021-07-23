@@ -1,5 +1,5 @@
 ﻿// Toony Colors Pro 2
-// (c) 2014-2020 Jean Moreno
+// (c) 2014-2021 Jean Moreno
 
 using System;
 using System.Collections.Generic;
@@ -211,7 +211,7 @@ namespace ToonyColorsPro
 				//this is to make sure that the CGINCLUDE block with needed #VARIABLES:MODULES gets processed correctly
 				features.AddRange(config.GetShaderPropertiesNeededFeaturesAll());
 				features.AddRange(config.GetHooksNeededFeatures());
-				features.AddRange(config.GetCodeInjectionNeeededFeatures());
+				features.AddRange(config.GetCodeInjectionNeededFeatures());
 
 				//parse lines and strip based on conditions
 				for (var i = 0; i < textLines.Length; i++)
@@ -226,7 +226,7 @@ namespace ToonyColorsPro
 							passIndex++;
 							features = new List<string>(config.Features);
 							features.AddRange(config.GetHooksNeededFeatures());
-							features.AddRange(config.GetCodeInjectionNeeededFeatures());
+							features.AddRange(config.GetCodeInjectionNeededFeatures());
 							features.AddRange(config.GetShaderPropertiesNeededFeaturesForPass(passIndex));
 
 							var passKeywordsFeatures = new List<string>();
@@ -940,7 +940,7 @@ namespace ToonyColorsPro
 
 							foreach (var sp in list)
 							{
-								if (!shaderPropertiesPerPass[passIndex].Contains(sp))
+								if (passIndex >= 0 && passIndex < shaderPropertiesPerPass.Count && !shaderPropertiesPerPass[passIndex].Contains(sp))
 								{
 									shaderPropertiesPerPass[passIndex].Add(sp);
 								}

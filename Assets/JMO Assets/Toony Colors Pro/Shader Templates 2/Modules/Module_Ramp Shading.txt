@@ -1,5 +1,5 @@
 // Toony Colors Pro+Mobile 2
-// (c) 2014-2020 Jean Moreno
+// (c) 2014-2021 Jean Moreno
 
 // Shader Generator Module: Ramp Shading
 
@@ -144,7 +144,7 @@ mult	lbl="Lights"				kw=All Lights|,Main Light|WRAPPED_LIGHTING_MAIN_LIGHT,Other
 ///
 /// IF TEXTURE_RAMP
 	/// IF RAMP_SEPARATED
-		[Header(Main Directional Light)]
+		[TCP2HeaderHelp(Main Directional Light)]
 	///
 		@%RampTextureDrawer%@ _Ramp ("@%RampTextureLabel%@ (RGB)", 2D) = "gray" {}
 	/// IF TEXTURE_RAMP_SLIDERS
@@ -152,7 +152,7 @@ mult	lbl="Lights"				kw=All Lights|,Main Light|WRAPPED_LIGHTING_MAIN_LIGHT,Other
 		[[PROP:Ramp Size]]
 	///
 	/// IF RAMP_MAIN_OTHER
-		[Header(Other Lights)]
+		[TCP2HeaderHelp(Other Lights)]
 		@%RampTextureDrawer%@ _RampOtherLights ("@%RampTextureLabel%@", 2D) = "gray" {}
 	  /// IF TEXTURE_RAMP_SLIDERS
 		[[PROP:Ramp Offset Other Lights]]
@@ -182,12 +182,12 @@ mult	lbl="Lights"				kw=All Lights|,Main Light|WRAPPED_LIGHTING_MAIN_LIGHT,Other
 	///
 /// ELIF RGB_RAMP
 	/// IF RAMP_SEPARATED
-		[Header(Main Directional Light)]
+		[TCP2HeaderHelp(Main Directional Light)]
 	///
 		[[PROP:Ramp Threshold RGB]]
 		[[PROP:Ramp Smoothing RGB]]
 	/// IF RAMP_MAIN_OTHER
-		[Header(Other Lights)]
+		[TCP2HeaderHelp(Other Lights)]
 		[[PROP:Ramp Threshold RGB Other Lights]]
 		[[PROP:Ramp Smoothing RGB Other Lights]]
 		[Space]
@@ -205,14 +205,14 @@ mult	lbl="Lights"				kw=All Lights|,Main Light|WRAPPED_LIGHTING_MAIN_LIGHT,Other
 	///
 /// ELIF CRISP_RAMP || CRISP_RAMP_NO_AA
 	/// IF RAMP_SEPARATED
-		[Header(Main Directional Light)]
+		[TCP2HeaderHelp(Main Directional Light)]
 	///
 	/// IF CRISP_RAMP
 		[[PROP:Ramp Crisp Smoothing]]
 	///
 		[[PROP:Ramp Threshold]]
 	/// IF RAMP_MAIN_OTHER
-		[Header(Other Lights)]
+		[TCP2HeaderHelp(Other Lights)]
 		[[PROP:Ramp Threshold Other Lights]]
 		[Space]
 	/// ELIF RAMP_MAIN_LIGHTTYPE
@@ -225,7 +225,7 @@ mult	lbl="Lights"				kw=All Lights|,Main Light|WRAPPED_LIGHTING_MAIN_LIGHT,Other
 	///
 /// ELIF RAMP_BANDS || RAMP_BANDS_CRISP || RAMP_BANDS_CRISP_NO_AA
 	/// IF RAMP_SEPARATED
-		[Header(Main Directional Light)]
+		[TCP2HeaderHelp(Main Directional Light)]
 	///
 	/// IF RAMP_BANDS_CRISP
 		[[PROP:Bands Crisp Smoothing]]
@@ -237,7 +237,7 @@ mult	lbl="Lights"				kw=All Lights|,Main Light|WRAPPED_LIGHTING_MAIN_LIGHT,Other
 		[[PROP:Bands Smoothing]]
 	///
 	/// IF RAMP_MAIN_OTHER
-		[Header(Other Lights)]
+		[TCP2HeaderHelp(Other Lights)]
 		[[PROP:Ramp Threshold Other Lights]]
 		[[PROP:Ramp Smoothing Other Lights]]
 		[[PROP:Bands Count Other Lights]]
@@ -272,12 +272,12 @@ mult	lbl="Lights"				kw=All Lights|,Main Light|WRAPPED_LIGHTING_MAIN_LIGHT,Other
 	///
 /// ELIF !TEXTURE_RAMP && !NO_RAMP && !NO_RAMP_UNLIT
 	/// IF RAMP_SEPARATED
-		[Header(Main Directional Light)]
+		[TCP2HeaderHelp(Main Directional Light)]
 	///
 		[[PROP:Ramp Threshold]]
 		[[PROP:Ramp Smoothing]]
 	/// IF RAMP_MAIN_OTHER
-		[Header(Other Lights)]
+		[TCP2HeaderHelp(Other Lights)]
 		[[PROP:Ramp Threshold Other Lights]]
 		[[PROP:Ramp Smoothing Other Lights]]
 		[Space]

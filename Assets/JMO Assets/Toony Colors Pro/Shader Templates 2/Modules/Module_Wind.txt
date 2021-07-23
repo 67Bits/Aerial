@@ -1,5 +1,5 @@
 // Toony Colors Pro+Mobile 2
-// (c) 2014-2020 Jean Moreno
+// (c) 2014-2021 Jean Moreno
 
 // Shader Generator Module: Wind Vertex Animations
 // TODO: pivot-based wind option, as in Book of the Dead
@@ -71,7 +71,7 @@ sngl	lbl="Make Optional"			kw=WIND_SHADER_FEATURE									indent	needs=WIND_ANIM
 /// IF WIND_ANIM
 	#if_not_empty
 
-		[Header(Wind)]
+		[TCP2HeaderHelp(Wind)]
 	#start_not_empty_block
 	/// IF WIND_SHADER_FEATURE
 		[Toggle(TCP2_WIND)] _UseWind ("Enable Wind", Float) = 0

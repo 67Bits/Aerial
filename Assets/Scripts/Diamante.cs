@@ -5,23 +5,11 @@ using MoreMountains.Feedbacks;
 
 public class Diamante : MonoBehaviour
 {
-    private JuegoControl juego_control;
-    private float velocidad_movimiento;
     public MMFeedbacks RotateFeedback;
-    // Start is called before the first frame update
-    void Start()
+
+    // Update is called once per frame
+    void Update()
     {
-        //juego_control = GameObject.FindGameObjectWithTag("juegoControl").GetComponent<JuegoControl>();
-        //velocidad_movimiento = juego_control.velocidad_escenario;
-    }
-
-
-
-
-        // Update is called once per frame
-        void Update()
-    {
-        transform.position += -transform.forward * velocidad_movimiento * Time.deltaTime;
         RotateFeedback?.PlayFeedbacks();
     }
 }

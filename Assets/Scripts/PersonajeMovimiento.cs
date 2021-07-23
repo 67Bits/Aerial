@@ -18,17 +18,10 @@ public class PersonajeMovimiento : MonoBehaviour
     RaycastHit actual_pendiente_ray;
     Vector3 piso_direccion;
     float piso_angulo;
-    [SerializeField]
-
-
     Vector3 pendiente_direccion_movimiento;
 
+    [HideInInspector]
     public bool bloqueado = false;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
     private bool detectarPendiente()
     {
@@ -58,7 +51,6 @@ public class PersonajeMovimiento : MonoBehaviour
             if (Input.GetMouseButton(0) && !bloqueado)
             {
                 rg_personaje.velocity = Vector3.up * fuerza_movimiento;
-                //anim.speed = 1;
                 anim.SetTrigger("subir");
                 anim.ResetTrigger("Idle");
             }
@@ -70,7 +62,6 @@ public class PersonajeMovimiento : MonoBehaviour
             }
             else if (Input.GetMouseButtonUp(0) && !bloqueado)
             {
-                //anim.speed = 0;
                 anim.SetTrigger("bajar");
                 anim.ResetTrigger("Idle");
             }

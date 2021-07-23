@@ -1,5 +1,5 @@
 // Toony Colors Pro+Mobile 2
-// (c) 2014-2020 Jean Moreno
+// (c) 2014-2021 Jean Moreno
 
 // Shader Generator Module: Water Effects
 
@@ -68,7 +68,7 @@ space	space=4
 /// IF DEPTH_BUFFER_FOAM
 		float	Foam Spread					fragment, imp(range, default = 2.0, min = 0.0, max = 5.0)
 		float	Foam Strength				fragment, imp(range, default = 0.8, min = 0.0, max = 1.0)
-		float	Foam Mask					fragment, imp(constant, default = 1.0), tt="Optional mask for the foam, if you want to manually define some areas to always have foam (e.g. at the edges of your water mesh using vertex colors)"
+		float	Foam Mask					fragment, imp(constant, default = 0.0), tt="Optional mask for the foam, if you want to manually define some areas to always have foam (e.g. at the edges of your water mesh using vertex colors)"
 		color_rgba	Foam Color				fragment, imp(color, label = "Foam Color (RGB) Opacity (A)", default = (0.9,0.9,0.9,1.0))
 	/// IF FOAM_ANIM
 		color	Foam Texture			fragment, imp(texture, variable = "_FoamTex", default = black, tiling_offset = true, locked_uv = true)
@@ -110,7 +110,7 @@ space	space=4
 #PROPERTIES_BLOCK
 	#if_not_empty
 
-		[Header(Vertex Waves Animation)]
+		[TCP2HeaderHelp(Vertex Waves Animation)]
 	#start_not_empty_block
 /// IF VERTEX_SIN_WAVES
 		[[PROP:Waves Speed]]
@@ -136,7 +136,7 @@ space	space=4
 	#end_not_empty
 	#if_not_empty
 
-		[Header(Depth Based Effects)]
+		[TCP2HeaderHelp(Depth Based Effects)]
 	#start_not_empty_block
 /// IF DEPTH_BUFFER_COLOR
 		[[PROP:Depth Color]]

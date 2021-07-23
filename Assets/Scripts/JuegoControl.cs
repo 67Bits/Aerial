@@ -6,19 +6,26 @@ public class JuegoControl : MonoBehaviour
 {
 
     //Instancia del objeto
+    [HideInInspector]
     public static JuegoControl administrador;
 
 
     [HideInInspector]
     public float velocidad_escenario = 4;
 
+    [HideInInspector]
     public int diamantes_totales;
 
     [HideInInspector]
     public List<Nivel> niveles;
 
+    [HideInInspector]
     public int nivel = 1;
+    [HideInInspector]
     public int nivel_real = 1;
+
+    [Header("Largo de niveles")]
+    public float largo1, largo2, largo3, largo4, largo5;
 
     public void Awake()
     {
@@ -53,15 +60,15 @@ public class JuegoControl : MonoBehaviour
     public void crearNiveles()
     {
         niveles = new List<Nivel>();
-        Nivel aCrear = new Nivel(1, 94.36f, "Prototipo1");
+        Nivel aCrear = new Nivel(1, largo1, "Prototipo1");
         niveles.Add(aCrear);
-        aCrear = new Nivel(2, 94.36f, "Prototipo2");
+        aCrear = new Nivel(2, largo2, "Prototipo2");
         niveles.Add(aCrear);
-        aCrear = new Nivel(3, 94.36f, "Prototipo3");
+        aCrear = new Nivel(3, largo3, "Prototipo3");
         niveles.Add(aCrear);
-        aCrear = new Nivel(4, 94.36f, "Prototipo4");
+        aCrear = new Nivel(4, largo4, "Prototipo4");
         niveles.Add(aCrear);
-        aCrear = new Nivel(5, 94.36f, "Prototipo5");
+        aCrear = new Nivel(5, largo5, "Prototipo5");
         niveles.Add(aCrear);
     }
 }

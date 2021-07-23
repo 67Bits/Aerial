@@ -1,5 +1,5 @@
 // Toony Colors Pro+Mobile 2
-// (c) 2014-2020 Jean Moreno
+// (c) 2014-2021 Jean Moreno
 
 // Shader Generator Module: Depth Texture effects
 
@@ -60,11 +60,24 @@
 
 		// Sample depth texture and calculate difference with local depth
 	/// IF URP
-		//float sceneDepth = SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, sampler_CameraDepthTexture, screenPos.xy / screenPos.w);
 		float sceneDepth = SampleSceneDepth(positionNDC.xy / positionNDC.w);
+		if (unity_OrthoParams.w > 0.0)
+		{
+			// Orthographic camera
+			#if UNITY_REVERSED_Z
+				sceneDepth = ((_ProjectionParams.z - _ProjectionParams.y) * (1.0 - sceneDepth) + _ProjectionParams.y);
+			#else
+				sceneDepth = ((_ProjectionParams.z - _ProjectionParams.y) * (sceneDepth) + _ProjectionParams.y);
+			#endif
+		}
+		else
+		{
+			// Perspective camera
+			sceneDepth = LinearEyeDepth(sceneDepth, _ZBufferParams);
+		}
+
 	/// ELSE
 		float sceneDepth = SAMPLE_DEPTH_TEXTURE_PROJ(_CameraDepthTexture, UNITY_PROJ_COORD(screenPos));
-	///
 		if (unity_OrthoParams.w > 0.0)
 		{
 			// Orthographic camera
@@ -76,12 +89,9 @@
 		else
 		{
 			// Perspective camera
-	/// IF URP
-			sceneDepth = LinearEyeDepth(sceneDepth, _ZBufferParams);
-	/// ELSE
 			sceneDepth = LinearEyeDepth(sceneDepth);
-	///
 		}
+	///
 
 	/// IF URP
 		//float localDepth = LinearEyeDepth(worldPos, UNITY_MATRIX_V);
