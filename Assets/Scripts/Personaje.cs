@@ -19,6 +19,8 @@ public class Personaje : MonoBehaviour
 
     private GameObject paredActual;
 
+    public DiamanteADiamante diamanteADiamante;
+
     public void OnTriggerEnter(Collider other)
     {
         if (nivelControl.vida > 0)
@@ -32,7 +34,6 @@ public class Personaje : MonoBehaviour
 
                 other.gameObject.SetActive(false);
 
-                nivelControl.cargarPuntos(1);
                 condiamante = true;
                 animacion_personaje.ResetTrigger("subir");
                 animacion_personaje.ResetTrigger("bajar");
@@ -58,6 +59,10 @@ public class Personaje : MonoBehaviour
                 personajeMovimiento.fuerza_movimiento = personajeMovimiento.fuerza_movimiento - 0.6f;
                 //personajeMovimiento.rg_personaje.velocity = Vector3.zero;
 
+                diamanteADiamante.comenzarMovimiento(other.transform.position, () =>
+                {
+                    nivelControl.cargarPuntos(1);
+                });
 
             }
             // Tijeras
@@ -90,28 +95,37 @@ public class Personaje : MonoBehaviour
             {
                 other.gameObject.SetActive(false);
 
-                float distancia = Mathf.Abs(transform.position.y - paredActual.GetComponent<Pared>().silueta.transform.position.y);
+                float distancia = Mathf.Abs(transform.position.y + 0.94f - paredActual.GetComponent<Pared>().silueta.transform.position.y);
                 print(distancia);
-                if (distancia > 1)
+                if (distancia > 0.6)
                 {
                     print("Mal ahí");
+                    nivelControl.txt_celebracion.text = "Mal";
                 }
-                else if (distancia > 0.6)
+                else if (distancia > 0.3)
                 {
                     print("Medio ahí");
+                    nivelControl.txt_celebracion.text = "Medio";
                 }
-                else if (distancia < 0.6)
+                else if (distancia < 0.3)
                 {
                     print("Ahí fue");
+                    nivelControl.txt_celebracion.text = "Perfect";
                 }
+                Invoke("quitarTextoCelebracion", 1);
             }
         }
     }
 
+    public void quitarTextoCelebracion()
+    {
+        nivelControl.txt_celebracion.text = "";
+    }
 
     public void desaparecerPared()
     {
         paredActual.SetActive(false);
+
     }
 
     IEnumerator desactivarAnimacionDiamantes()

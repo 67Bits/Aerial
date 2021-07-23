@@ -20,14 +20,14 @@ public class NivelControl : MonoBehaviour
          
     [Header("Anexos Personaje")]
     public Animator animacion_personaje;
+    
     public GameObject personaje_objeto;
+    public GameObject tela_objeto1, tela_objeto2, tela_objeto3;
 
     [HideInInspector]
     public float largoactual_nivel = 0;
 
-    [Header("Anexos textura tela")]
-    public SkinnedMeshRenderer tela1, tela2;
-    public Material m1, m2, m3, m4, m5;
+
 
     //[HideInInspector]
     //public List<GameObject> objetos_desaparecidos;
@@ -36,7 +36,7 @@ public class NivelControl : MonoBehaviour
     public GameObject plataforma;
 
     [Header("Anexos Efectos")]
-    public GameObject particulavictoria1, particulavictoria2;
+    public GameObject particulavictoria1, particulavictoria2, particulapared;
 
     [Header("Anexos interfaz")]
     public TextMeshProUGUI txt_puntos;
@@ -45,6 +45,7 @@ public class NivelControl : MonoBehaviour
     public TextMeshProUGUI txt_diamantes;
     public GameObject canvasPrincipal, canvasPerdida, canvasInicio, canvasVictoria;
     public Slider sliderProgreso;
+    public TextMeshProUGUI txt_celebracion;
     public void cargarPuntos(int numeroPuntos)
     {
         puntos_nivel += numeroPuntos;
@@ -74,37 +75,8 @@ public class NivelControl : MonoBehaviour
         {
             vida = 5;
         }
-        actualizarTelas();
+    }
 
-    }
-    public void actualizarTelas()
-    {
-        if (vida == 1)
-        {
-            tela1.material = m5;
-            tela2.material = m5;
-        }
-        else if (vida == 2)
-        {
-            tela1.material = m4;
-            tela2.material = m4;
-        }
-        else if (vida == 3)
-        {
-            tela1.material = m3;
-            tela2.material = m3;
-        }
-        else if (vida == 4)
-        {
-            tela1.material = m2;
-            tela2.material = m2;
-        }
-        else if (vida == 5)
-        {
-            tela1.material = m1;
-            tela2.material = m1;
-        }
-    }
 
     public void iniciar()
     {
@@ -125,7 +97,6 @@ public class NivelControl : MonoBehaviour
         txt_nivel_inicio.text = "Level " + (juegoControl.nivel_real).ToString();
 
         Invoke("actualizarInfoNivel", 0.1f);
-        actualizarTelas();
     }
     public void actualizarInfoNivel()
     {
