@@ -46,24 +46,35 @@ public class PersonajeMovimiento : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (nivelControl.estado == 2 && !bloqueado)
+        if (nivelControl.estado == 2)
         {
-            if (Input.GetMouseButton(0) && !bloqueado)
+            if (Input.GetMouseButton(0))
             {
+                if (!bloqueado)
+                {
+                    anim.SetTrigger("subir");
+                    anim.ResetTrigger("Idle");
+                }
                 rg_personaje.velocity = Vector3.up * fuerza_movimiento;
-                anim.SetTrigger("subir");
-                anim.ResetTrigger("Idle");
+              
             }
 
-            if (Input.GetMouseButtonDown(0) && !bloqueado)
+            if (Input.GetMouseButtonDown(0))
             {
-                anim.SetTrigger("subir");
-                anim.ResetTrigger("Idle");
+                if (!bloqueado)
+                {
+                    anim.SetTrigger("subir");
+                    anim.ResetTrigger("Idle");
+                }
+
             }
-            else if (Input.GetMouseButtonUp(0) && !bloqueado)
+            else if (Input.GetMouseButtonUp(0))
             {
-                anim.SetTrigger("bajar");
-                anim.ResetTrigger("Idle");
+                if (!bloqueado)
+                {
+                    anim.SetTrigger("bajar");
+                    anim.ResetTrigger("Idle");
+                }                
             }
         }
     }

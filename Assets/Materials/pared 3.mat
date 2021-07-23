@@ -113,6 +113,7 @@ Material:
     - _Outline: 2
     - _OutlineLightingType: 0
     - _OutlineLightingTypeURP: 0
+    - _OutlineMaxWidth: 1
     - _OutlineMinWidth: 1
     - _OutlinePixelSizeType: 0
     - _OutlineTextureLOD: 5
@@ -133,6 +134,7 @@ Material:
     - _RenderingMode: 0
     - _RimMax: 1.28
     - _RimMin: 0.17
+    - _ShadowColorLightAtten: 1
     - _Shininess: 0.1
     - _SingleIndirectColor: 0
     - _SmoothnessTextureChannel: 0
@@ -175,3 +177,4 @@ Material:
     - _SColor: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _SpecularColor: {r: 0.75, g: 0.75, b: 0.75, a: 1}
+  m_BuildTextureStacks: []
