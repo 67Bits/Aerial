@@ -51,7 +51,7 @@ public class Personaje : MonoBehaviour
                 {
                     paredActual = other.gameObject.GetComponent<Diamante>().pared_anexa;
                     print("fader");
-                    Invoke("desaparecerPared", 2f);
+                    Invoke("desaparecerPared", 1f);
                     StartCoroutine("desactivarAnimacionDiamantes2");
                 }
 
