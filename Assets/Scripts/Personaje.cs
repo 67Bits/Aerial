@@ -100,12 +100,12 @@ public class Personaje : MonoBehaviour
                 if (distancia > 0.6)
                 {
                     print("Mal ahí");
-                    nivelControl.txt_celebracion.text = "Mal";
+                    nivelControl.txt_celebracion.text = "Bad";
                 }
                 else if (distancia > 0.3)
                 {
                     print("Medio ahí");
-                    nivelControl.txt_celebracion.text = "Medio";
+                    nivelControl.txt_celebracion.text = "Almost";
                 }
                 else if (distancia < 0.3)
                 {
@@ -124,7 +124,8 @@ public class Personaje : MonoBehaviour
 
     public void desaparecerPared()
     {
-        paredActual.SetActive(false);
+        paredActual.GetComponent<Pared>().dissapear = true;
+        //paredActual.SetActive(false);
 
     }
 
