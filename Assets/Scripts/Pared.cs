@@ -5,7 +5,7 @@ using MoreMountains.Feedbacks;
 
 public class Pared : MonoBehaviour
 {
-    public MMFeedbacks ShineFeedback;
+    public MMFeedbacks ShineFeedback/*, particleFeedback*/;
     public GameObject silueta;
     [HideInInspector] public bool dissapear = false;
 
@@ -13,15 +13,18 @@ public class Pared : MonoBehaviour
     {
         if (dissapear)
         {
+            print("fade");
             ShineFeedback?.PlayFeedbacks();
+            //particleFeedback?.PlayFeedbacks();
             StartCoroutine(Fade());
         }
     }
 
     IEnumerator Fade()
     {
+        print("dade");
         dissapear = false;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.4f);
         gameObject.SetActive(false);
     }
 }

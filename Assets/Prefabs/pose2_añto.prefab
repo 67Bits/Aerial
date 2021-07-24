@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1279274046357389372}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.48, z: 0}
+  m_LocalPosition: {x: 0, y: 1.709, z: 0}
   m_LocalScale: {x: 0.79999995, y: 0.79999995, z: 0.79999995}
   m_Children:
   - {fileID: 7942063302125419111}
@@ -43,8 +43,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
-  m_Center: {x: 0, y: 0.00000047683716, z: 0}
+  m_Radius: 0.752768
+  m_Center: {x: 0, y: -3.537027, z: 0}
 --- !u!1 &1856435969262478534
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,7 +62,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3412068242792035535
 Transform:
   m_ObjectHideFlags: 0
@@ -4877,6 +4877,7 @@ GameObject:
   - component: {fileID: 6244269115377402310}
   - component: {fileID: 246820021246893908}
   - component: {fileID: 9156669840445695457}
+  - component: {fileID: 7529033399715595437}
   m_Layer: 10
   m_Name: Feedbacks
   m_TagString: Untagged
@@ -4912,6 +4913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Feedbacks:
   - {fileID: 9156669840445695457}
+  - {fileID: 7529033399715595437}
   InitializationMode: 2
   SafeMode: 3
   Direction: 0
@@ -4984,7 +4986,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: dd26e97d62c12ec4fbb3fcb73ef105bf, type: 2}
   - {fileID: 2100000, guid: 2afdd8567000f0f408b8b6fec026aca5, type: 2}
   InterpolateTransition: 1
-  TransitionDuration: 1
+  TransitionDuration: 0.7
   TransitionCurve:
     serializedVersion: 2
     m_Curve:
@@ -5009,6 +5011,42 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7529033399715595437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128748843660152993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c27131831afa28b499cb120fc9059997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active: 1
+  Label: Particles Play
+  Chance: 100
+  Timing:
+    TimescaleMode: 0
+    InitialDelay: 0
+    CooldownDuration: 0
+    NumberOfRepeats: 0
+    RepeatForever: 0
+    DelayBetweenRepeats: 1
+    MMFeedbacksDirectionCondition: 0
+    PlayDirection: 0
+    ConstantIntensity: 0
+    UseIntensityInterval: 0
+    IntensityIntervalMin: 0
+    IntensityIntervalMax: 0
+    Sequence: {fileID: 0}
+    TrackID: 0
+    Quantized: 0
+    TargetBPM: 120
+  DebugActive: 0
+  BoundParticleSystem: {fileID: 3122803548251402032}
+  MoveToPosition: 0
+  RandomParticleSystems: []
 --- !u!1 &3159967227846833292
 GameObject:
   m_ObjectHideFlags: 0
@@ -19552,8 +19590,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.5323896, y: 0.77, z: 0.36495718}
-  m_Center: {x: 0, y: 2.9, z: 0}
+  m_Size: {x: 4.5323896, y: 3.351101, z: 0.36495718}
+  m_Center: {x: 0, y: 1.6094496, z: 0}
 --- !u!65 &5831105078254008349
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19565,8 +19603,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.5323896, y: 3.11, z: 0.36495718}
-  m_Center: {x: 0, y: -1.13, z: 0}
+  m_Size: {x: 4.5323896, y: 0.66305757, z: 0.36495718}
+  m_Center: {x: 0, y: -2.3534713, z: 0}
 --- !u!114 &8771923069752674829
 MonoBehaviour:
   m_ObjectHideFlags: 0

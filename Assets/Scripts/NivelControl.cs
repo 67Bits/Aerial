@@ -13,7 +13,7 @@ public class NivelControl : MonoBehaviour
     [HideInInspector]
     public int puntos_nivel = 0;
     [HideInInspector]
-    public int vida = 1;
+    public int vida = 10;
     // estado 1 : Juego no ha empezado; estado 2: Juego inicio; estado 3: llego a la meta; 
     [HideInInspector]
     public int estado = 1;
@@ -71,9 +71,9 @@ public class NivelControl : MonoBehaviour
             animacion_personaje.SetTrigger("muerte");
             estado = 1;
         }
-        if (vida >= 5)
+        if (vida >= 10)
         {
-            vida = 5;
+            vida = 10;
         }
     }
 
@@ -91,7 +91,7 @@ public class NivelControl : MonoBehaviour
         juegoControl = GameObject.FindGameObjectWithTag("juegoControl").GetComponent<JuegoControl>();
 
         estado = 1;
-        vida = 5;
+        vida = 20;
         txt_puntos.text = puntos_nivel.ToString();
         txt_nivel.text = "Level " + (juegoControl.nivel_real).ToString();
         txt_nivel_inicio.text = "Level " + (juegoControl.nivel_real).ToString();

@@ -19294,7 +19294,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6091381571888393160}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.46, z: 0}
+  m_LocalPosition: {x: 0, y: 1.24, z: 0}
   m_LocalScale: {x: 0.79999995, y: 0.79999995, z: 0.79999995}
   m_Children:
   - {fileID: 3672944002159423217}
@@ -19312,8 +19312,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
-  m_Center: {x: 0, y: 0.00000047683716, z: 0}
+  m_Radius: 0.6850869
+  m_Center: {x: 0, y: -3.16, z: 0}
 --- !u!1 &7272330271993550854
 GameObject:
   m_ObjectHideFlags: 0
@@ -19410,8 +19410,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.5323896, y: 0.77, z: 0.36495718}
-  m_Center: {x: 0, y: 2.9, z: 0}
+  m_Size: {x: 4.5323896, y: 2.972248, z: 0.36495718}
+  m_Center: {x: 0, y: 1.798876, z: 0}
 --- !u!65 &7803035247788439315
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19423,8 +19423,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.5323896, y: 3.15, z: 0.36495718}
-  m_Center: {x: 0, y: -1.13, z: 0}
+  m_Size: {x: 4.5323896, y: 0.43251324, z: 0.36495718}
+  m_Center: {x: 0, y: -2.4887433, z: 0}
 --- !u!114 &2716025962045634037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19457,7 +19457,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3296701225664518070
 Transform:
   m_ObjectHideFlags: 0
@@ -24272,6 +24272,7 @@ GameObject:
   - component: {fileID: 2784673137368438982}
   - component: {fileID: 7542915984485507409}
   - component: {fileID: 6241355345389253692}
+  - component: {fileID: 4949589481162153287}
   m_Layer: 10
   m_Name: Feedbacks
   m_TagString: Untagged
@@ -24307,6 +24308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Feedbacks:
   - {fileID: 6241355345389253692}
+  - {fileID: 4949589481162153287}
   InitializationMode: 2
   SafeMode: 3
   Direction: 0
@@ -24379,7 +24381,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 8e6f9030371cdb44794b8a8cce4efc37, type: 2}
   - {fileID: 2100000, guid: 8e452ac8a8576864986f5e0749100722, type: 2}
   InterpolateTransition: 1
-  TransitionDuration: 1
+  TransitionDuration: 0.7
   TransitionCurve:
     serializedVersion: 2
     m_Curve:
@@ -24404,6 +24406,42 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4949589481162153287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8485430812694014837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c27131831afa28b499cb120fc9059997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active: 1
+  Label: Particles Play
+  Chance: 100
+  Timing:
+    TimescaleMode: 0
+    InitialDelay: 0
+    CooldownDuration: 0
+    NumberOfRepeats: 0
+    RepeatForever: 0
+    DelayBetweenRepeats: 1
+    MMFeedbacksDirectionCondition: 0
+    PlayDirection: 0
+    ConstantIntensity: 0
+    UseIntensityInterval: 0
+    IntensityIntervalMin: 0
+    IntensityIntervalMax: 0
+    Sequence: {fileID: 0}
+    TrackID: 0
+    Quantized: 0
+    TargetBPM: 120
+  DebugActive: 0
+  BoundParticleSystem: {fileID: 1557332419934022316}
+  MoveToPosition: 0
+  RandomParticleSystems: []
 --- !u!1001 &1988236863324031912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24444,7 +24482,7 @@ PrefabInstance:
     - target: {fileID: 2985686410680935769, guid: 1e38b5bd8e10a464aa5fd0ec9e814222,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.36
+      value: -3.94
       objectReference: {fileID: 0}
     - target: {fileID: 2985686410680935769, guid: 1e38b5bd8e10a464aa5fd0ec9e814222,
         type: 3}

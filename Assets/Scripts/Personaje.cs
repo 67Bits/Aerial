@@ -50,7 +50,8 @@ public class Personaje : MonoBehaviour
                 else
                 {
                     paredActual = other.gameObject.GetComponent<Diamante>().pared_anexa;
-                    Invoke("desaparecerPared", 1f);
+                    print("fader");
+                    Invoke("desaparecerPared", 2f);
                     StartCoroutine("desactivarAnimacionDiamantes2");
                 }
 
@@ -68,8 +69,10 @@ public class Personaje : MonoBehaviour
             // Tijeras
             else if (other.gameObject.layer == 10)
             {
-                other.gameObject.SetActive(false);
-
+                paredActual = other.gameObject;
+                other.gameObject.layer = 0;
+                //other.gameObject.SetActive(false);
+                Invoke("desaparecerPared", 0.1f);
                 nivelControl.hacerDaño(1);
 
                 shake.GenerateImpulse();
@@ -78,7 +81,7 @@ public class Personaje : MonoBehaviour
             else if (other.gameObject.layer == 12)
             {
                 paredActual = other.gameObject;
-                Invoke("desaparecerPared", 1f);
+                Invoke("desaparecerPared", 2f);
                 //other.gameObject.SetActive(false);
                 nivelControl.estado = 3;
                 nivelControl.canvasPrincipal.SetActive(false);
@@ -97,17 +100,17 @@ public class Personaje : MonoBehaviour
 
                 float distancia = Mathf.Abs(transform.position.y + 0.94f - paredActual.GetComponent<Pared>().silueta.transform.position.y);
                 print(distancia);
-                if (distancia > 0.6)
+                if (distancia > 1.0f)
                 {
                     print("Mal ahí");
                     nivelControl.txt_celebracion.text = "Bad";
                 }
-                else if (distancia > 0.3)
+                else if (distancia > 0.5f)
                 {
                     print("Medio ahí");
                     nivelControl.txt_celebracion.text = "Almost";
                 }
-                else if (distancia < 0.3)
+                else if (distancia < 0.5f)
                 {
                     print("Ahí fue");
                     nivelControl.txt_celebracion.text = "Perfect";
@@ -131,7 +134,7 @@ public class Personaje : MonoBehaviour
 
     IEnumerator desactivarAnimacionDiamantes()
     {
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(1.6f);
         Physics.gravity = new Vector3(0, -9.8f, 0);
         personajeMovimiento.fuerza_movimiento = personajeMovimiento.fuerza_movimiento + 0.6f;
         personajeMovimiento.bloqueado = false;
