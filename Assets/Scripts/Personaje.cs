@@ -88,7 +88,8 @@ public class Personaje : MonoBehaviour
                 nivelControl.canvasVictoria.SetActive(true);
 
                 nivelControl.agregarDiamantesTotales();
-                nivelControl.txt_diamantes.text = "Level Diamonds: " + (nivelControl.puntos_nivel).ToString() + "\nAll Diamonds: " + (nivelControl.juegoControl.diamantes_totales).ToString();
+                nivelControl.txt_diamantes.text = (nivelControl.puntos_nivel).ToString();
+                nivelControl.txt_final.text = (nivelControl.juegoControl.diamantes_totales).ToString();
 
                 animacion_personaje.SetTrigger("victoria");
                 nivelControl.particulavictoria1.SetActive(true);

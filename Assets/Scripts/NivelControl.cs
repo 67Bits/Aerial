@@ -42,7 +42,7 @@ public class NivelControl : MonoBehaviour
     public TextMeshProUGUI txt_puntos;
     public TextMeshProUGUI txt_nivel;
     public TextMeshProUGUI txt_nivel_inicio;
-    public TextMeshProUGUI txt_diamantes;
+    public TextMeshProUGUI txt_diamantes, txt_final;
     public GameObject canvasPrincipal, canvasPerdida, canvasInicio, canvasVictoria;
     public Slider sliderProgreso;
     public TextMeshProUGUI txt_celebracion;
