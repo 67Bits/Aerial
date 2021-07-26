@@ -51,7 +51,6 @@ public class Personaje : MonoBehaviour
                 else
                 {
                     paredActual = other.gameObject.GetComponent<Diamante>().pared_anexa;
-                    print("fader");
                     Invoke("desaparecerPared", 1f);
                     StartCoroutine("desactivarAnimacionDiamantes2");
                 }
@@ -97,23 +96,21 @@ public class Personaje : MonoBehaviour
             }
             else if (other.gameObject.layer == 14)
             {
-                other.gameObject.SetActive(false);
+                paredActual.GetComponent<Pared>().playSil = true;
+                //other.gameObject.SetActive(false);
 
                 float distancia = Mathf.Abs(transform.position.y + 0.94f - paredActual.GetComponent<Pared>().silueta.transform.position.y);
                 print(distancia);
-                if (distancia > 1.0f)
+                if (distancia > 2.0f)
                 {
-                    print("Mal ahí");
-                    nivelControl.txt_celebracion.text = "Bad";
+                    nivelControl.txt_celebracion.text = "Fail";
                 }
-                else if (distancia > 0.5f)
+                else if (distancia > 0.9f)
                 {
-                    print("Medio ahí");
-                    nivelControl.txt_celebracion.text = "Almost";
+                    nivelControl.txt_celebracion.text = "Almost perfect";
                 }
-                else if (distancia < 0.5f)
+                else if (distancia < 0.9f)
                 {
-                    print("Ahí fue");
                     nivelControl.txt_celebracion.text = "Perfect";
                 }
                 Invoke("quitarTextoCelebracion", 1);
@@ -124,6 +121,7 @@ public class Personaje : MonoBehaviour
     public void quitarTextoCelebracion()
     {
         nivelControl.txt_celebracion.text = "";
+        desaparecerPared();
     }
 
     public void desaparecerPared()
