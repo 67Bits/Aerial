@@ -6,6 +6,7 @@ using GameAnalyticsSDK;
 public class GAManager : MonoBehaviour
 {
     public static GAManager instance;
+    JuegoControl juegoControl;
 
     private void Awake()
     {
@@ -15,7 +16,9 @@ public class GAManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        juegoControl = GameObject.FindGameObjectWithTag("JuegoControl").GetComponent<JuegoControl>();
         GameAnalytics.Initialize();
+        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, "Level" + juegoControl.nivel_real);
     }
 
     // Update is called once per frame
