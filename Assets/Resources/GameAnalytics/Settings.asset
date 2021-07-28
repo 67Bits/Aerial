@@ -25,16 +25,22 @@ MonoBehaviour:
   UserMessagesSubmitted: 0
   UserMessagesFailed: 0
   CustomArea: 
-  gameKey: []
-  secretKey: []
-  Build: []
-  SelectedPlatformOrganization: []
-  SelectedPlatformStudio: []
-  SelectedPlatformGame: []
-  SelectedPlatformGameID: 
-  SelectedOrganization: 
-  SelectedStudio: 
-  SelectedGame: 
+  gameKey:
+  - 4eeaa76a4a00b2a4f71a3d670aec3111
+  secretKey:
+  - fad5011639e1b16e5470ca19eb813c34cea6983a
+  Build:
+  - 0.1
+  SelectedPlatformOrganization:
+  - Lion Studios
+  SelectedPlatformStudio:
+  - 67 Bits
+  SelectedPlatformGame:
+  - Aerial Silks
+  SelectedPlatformGameID: a75e0200
+  SelectedOrganization: 02000000
+  SelectedStudio: 01000000
+  SelectedGame: 03000000
   NewVersion: 
   Changes: 
   SignUpOpen: 1
@@ -57,7 +63,7 @@ MonoBehaviour:
   ResourceItemTypes: []
   ResourceCurrencies: []
   LastCreatedGamePlatform: 0
-  Platforms: 
+  Platforms: 0b000000
   CurrentInspectorState: 1
   ClosedHints: 
   DisplayHints: 0
@@ -85,7 +91,7 @@ MonoBehaviour:
   IncludeGooglePlay: 1
   FpsCriticalThreshold: 20
   FpsCirticalSubmitInterval: 1
-  PlatformFoldOut: 
+  PlatformFoldOut: 01
   CustomDimensions01FoldOut: 0
   CustomDimensions02FoldOut: 0
   CustomDimensions03FoldOut: 0

@@ -80,6 +80,7 @@ public class Personaje : MonoBehaviour
             // LLegada
             else if (other.gameObject.layer == 12)
             {
+                GAManager.instance.OnLevelComplete(nivelControl.juegoControl.nivel_real);
                 paredActual = other.gameObject;
                 Invoke("desaparecerPared", 2f);
                 //other.gameObject.SetActive(false);
