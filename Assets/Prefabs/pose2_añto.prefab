@@ -9870,7 +9870,7 @@ GameObject:
   - component: {fileID: 3097575767943763638}
   - component: {fileID: 8751191402588278429}
   m_Layer: 10
-  m_Name: Feedbacks (1)
+  m_Name: Feedbacks (siluete)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
