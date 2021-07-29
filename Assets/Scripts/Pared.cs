@@ -34,14 +34,14 @@ public class Pared : MonoBehaviour
     IEnumerator Fade()
     {
         dissapear = false;
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.5f);
         gameObject.SetActive(false);
     }
 
     IEnumerator FadeSil()
     {
         playSil = false;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.4f);
         gameObject.SetActive(false);
     }
 }

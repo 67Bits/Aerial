@@ -103,15 +103,15 @@ public class Personaje : MonoBehaviour
 
                 float distancia = Mathf.Abs(transform.position.y + 0.94f - paredActual.GetComponent<Pared>().silueta.transform.position.y);
                 print(distancia);
-                if (distancia > 2.0f)
+                if (distancia > 1.7f)
                 {
                     nivelControl.txt_celebracion.text = "Fail";
                 }
-                else if (distancia > 0.9f)
+                else if (distancia > 0.7f)
                 {
                     nivelControl.txt_celebracion.text = "Almost perfect";
                 }
-                else if (distancia < 0.9f)
+                else if (distancia < 0.7f)
                 {
                     nivelControl.txt_celebracion.text = "Perfect";
                 }
