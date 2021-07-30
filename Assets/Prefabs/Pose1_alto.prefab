@@ -19450,6 +19450,25 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!95 &4423135418467054531
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5249067430640275793}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e1a0aa5beb377424983956e734908c61, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6091381571888393160
 GameObject:
   m_ObjectHideFlags: 0
@@ -19595,8 +19614,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.5323896, y: 3.3961382, z: 0.36495718}
-  m_Center: {x: 0, y: 1.586931, z: 0}
+  m_Size: {x: 4.5323896, y: 3.2474947, z: 0.36495718}
+  m_Center: {x: 0, y: 1.6612527, z: 0}
 --- !u!65 &7803035247788439315
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19608,8 +19627,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.5323896, y: 0.8307991, z: 0.36495718}
-  m_Center: {x: 0, y: -2.2896004, z: 0}
+  m_Size: {x: 4.5323896, y: 0.7246971, z: 0.36495718}
+  m_Center: {x: 0, y: -2.3426514, z: 0}
 --- !u!114 &2716025962045634037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19625,6 +19644,7 @@ MonoBehaviour:
   ShineFeedback: {fileID: 7542915984485507409}
   shadowFeedback: {fileID: 8420439699175647869}
   silueta: {fileID: 6091381571888393160}
+  animatedWall: {fileID: 5249067430640275793}
   dissapear: 0
   playSil: 0
 --- !u!1 &7538158848625636541
@@ -24925,11 +24945,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: pared6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b284249e509e64f4989995299d146d72,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b284249e509e64f4989995299d146d72, type: 3}
 --- !u!4 &4869446354416602091 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b284249e509e64f4989995299d146d72,
+    type: 3}
+  m_PrefabInstance: {fileID: 4906960783334697984}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5249067430640275793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b284249e509e64f4989995299d146d72,
     type: 3}
   m_PrefabInstance: {fileID: 4906960783334697984}
   m_PrefabAsset: {fileID: 0}

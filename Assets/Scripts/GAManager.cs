@@ -16,7 +16,7 @@ public class GAManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        juegoControl = GameObject.FindGameObjectWithTag("JuegoControl").GetComponent<JuegoControl>();
+        juegoControl = GameObject.FindGameObjectWithTag("juegoControl").GetComponent<JuegoControl>();
         GameAnalytics.Initialize();
         GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, "Level" + juegoControl.nivel_real);
     }

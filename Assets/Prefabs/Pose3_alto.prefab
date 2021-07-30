@@ -24372,8 +24372,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.5323896, y: 1.6436443, z: 0.36495718}
-  m_Center: {x: 0, y: 2.0216289, z: 0}
+  m_Size: {x: 4.5323896, y: 1.4473276, z: 0.36495718}
+  m_Center: {x: 0, y: 2.1197872, z: 0}
 --- !u!65 &3332292178674530362
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24385,8 +24385,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.5323896, y: 1.7104111, z: 0.36495718}
-  m_Center: {x: 0, y: -1.5311017, z: 0}
+  m_Size: {x: 4.5323896, y: 1.6209531, z: 0.36495718}
+  m_Center: {x: 0, y: -1.5758307, z: 0}
 --- !u!114 &8941889428875694064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24402,6 +24402,7 @@ MonoBehaviour:
   ShineFeedback: {fileID: 1782629152386702563}
   shadowFeedback: {fileID: 88258428776055827}
   silueta: {fileID: 8742500112356807276}
+  animatedWall: {fileID: 6761287618224491295}
   dissapear: 0
   playSil: 0
 --- !u!1 &6512854956168920464
@@ -29225,6 +29226,25 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!95 &2194240012629386804
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6761287618224491295}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7414d650650f43641a90985f5a6121a0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7740221290036389864
 GameObject:
   m_ObjectHideFlags: 0
@@ -34472,6 +34492,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 270388a90de5534418ede44861e09041, type: 3}
+--- !u!1 &6761287618224491295 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 270388a90de5534418ede44861e09041,
+    type: 3}
+  m_PrefabInstance: {fileID: 5842719672080381518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6241773478563074469 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 270388a90de5534418ede44861e09041,

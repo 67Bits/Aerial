@@ -69,10 +69,11 @@ public class Personaje : MonoBehaviour
             // Tijeras
             else if (other.gameObject.layer == 10)
             {
+                print("layer10");
                 paredActual = other.gameObject;
                 other.gameObject.layer = 0;
                 //other.gameObject.SetActive(false);
-                Invoke("desaparecerPared", 0.1f);
+                Invoke("desaparecerPared", 1);
                 nivelControl.hacerDaño(1);
 
                 shake.GenerateImpulse();

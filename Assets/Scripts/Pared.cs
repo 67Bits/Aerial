@@ -7,6 +7,7 @@ public class Pared : MonoBehaviour
 {
     public MMFeedbacks ShineFeedback, shadowFeedback;
     public GameObject silueta;
+    public GameObject animatedWall;
     [HideInInspector] public bool dissapear = false;
     [HideInInspector] public bool playSil = false;
 
@@ -19,13 +20,12 @@ public class Pared : MonoBehaviour
     {
         if (dissapear)
         {
-            print("fade");
+            print("wall");
             ShineFeedback?.PlayFeedbacks();
             StartCoroutine(Fade());
         }
         if (playSil)
         {
-            print("fade sil");
             shadowFeedback?.PlayFeedbacks();
             StartCoroutine(FadeSil());
         }
@@ -33,15 +33,19 @@ public class Pared : MonoBehaviour
 
     IEnumerator Fade()
     {
+        animatedWall.GetComponent<Animator>().SetTrigger("fall");
         dissapear = false;
-        yield return new WaitForSeconds(0.5f);
-        gameObject.SetActive(false);
+        yield return new WaitForSeconds(1.9f);
+        //gameObject.SetActive(false);
+        print("dade");
     }
 
     IEnumerator FadeSil()
     {
         playSil = false;
-        yield return new WaitForSeconds(0.4f);
-        gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.8f);
+        silueta.SetActive(false);
+        if(dissapear)
+            StartCoroutine(Fade());
     }
 }
