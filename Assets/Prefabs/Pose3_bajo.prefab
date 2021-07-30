@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &21868546481901347
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778996952369642152}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c0ff8cbb1a9982d419866db73a77ef1d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1023165171515382998
 GameObject:
   m_ObjectHideFlags: 0
@@ -29449,7 +29468,7 @@ MonoBehaviour:
   ShineFeedback: {fileID: 5251135860457370893}
   shadowFeedback: {fileID: 3854001025108426725}
   silueta: {fileID: 1023165171515382998}
-  animatedWall: {fileID: 0}
+  animatedWall: {fileID: 778996952369642152}
   dissapear: 0
   playSil: 0
 --- !u!1001 &436537212714584057
@@ -29521,6 +29540,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b284249e509e64f4989995299d146d72, type: 3}
+--- !u!1 &778996952369642152 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b284249e509e64f4989995299d146d72,
+    type: 3}
+  m_PrefabInstance: {fileID: 436537212714584057}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &109314774414319634 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b284249e509e64f4989995299d146d72,
@@ -29675,15 +29700,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: accd6085d9a335247b10d45b6e6a9399, type: 3}
---- !u!198 &4724386671480368600 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198706918190050108, guid: accd6085d9a335247b10d45b6e6a9399,
-    type: 3}
-  m_PrefabInstance: {fileID: 4850823502087587556}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4854523100968536434 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4271929177690006, guid: accd6085d9a335247b10d45b6e6a9399,
+    type: 3}
+  m_PrefabInstance: {fileID: 4850823502087587556}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4724386671480368600 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198706918190050108, guid: accd6085d9a335247b10d45b6e6a9399,
     type: 3}
   m_PrefabInstance: {fileID: 4850823502087587556}
   m_PrefabAsset: {fileID: 0}

@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &1348193472231587221
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99909323941226637}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2f83c5c51b4936f43be183523e82f3dc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &842187488531663552
 GameObject:
   m_ObjectHideFlags: 0
@@ -19625,7 +19644,7 @@ MonoBehaviour:
   ShineFeedback: {fileID: 7542915984485507409}
   shadowFeedback: {fileID: 8420439699175647869}
   silueta: {fileID: 6091381571888393160}
-  animatedWall: {fileID: 0}
+  animatedWall: {fileID: 99909323941226637}
   dissapear: 0
   playSil: 0
 --- !u!1 &7538158848625636541
@@ -24705,6 +24724,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 982799369747633628}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &99909323941226637 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7db41b54b99bdc14db47762a9d087684,
+    type: 3}
+  m_PrefabInstance: {fileID: 982799369747633628}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1762444835453526594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24767,15 +24792,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: accd6085d9a335247b10d45b6e6a9399, type: 3}
---- !u!198 &1924309033440545150 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198706918190050108, guid: accd6085d9a335247b10d45b6e6a9399,
-    type: 3}
-  m_PrefabInstance: {fileID: 1762444835453526594}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1763822746909388244 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4271929177690006, guid: accd6085d9a335247b10d45b6e6a9399,
+    type: 3}
+  m_PrefabInstance: {fileID: 1762444835453526594}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1924309033440545150 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198706918190050108, guid: accd6085d9a335247b10d45b6e6a9399,
     type: 3}
   m_PrefabInstance: {fileID: 1762444835453526594}
   m_PrefabAsset: {fileID: 0}

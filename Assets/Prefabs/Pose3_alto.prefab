@@ -24271,6 +24271,25 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!95 &4605012120967653489
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157453173116971468}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eaee44fc0a3893b45b0e8b89058fb63e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5815702199458620428
 GameObject:
   m_ObjectHideFlags: 0
@@ -24402,7 +24421,7 @@ MonoBehaviour:
   ShineFeedback: {fileID: 1782629152386702563}
   shadowFeedback: {fileID: 88258428776055827}
   silueta: {fileID: 8742500112356807276}
-  animatedWall: {fileID: 0}
+  animatedWall: {fileID: 5157453173116971468}
   dissapear: 0
   playSil: 0
 --- !u!1 &6512854956168920464
@@ -34473,6 +34492,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 840f0ab832796af4298cfdb3e359079a, type: 3}
+--- !u!1 &5157453173116971468 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 840f0ab832796af4298cfdb3e359079a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5427855166396437661}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5537497870638871414 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 840f0ab832796af4298cfdb3e359079a,
