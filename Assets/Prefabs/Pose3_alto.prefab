@@ -24391,8 +24391,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.5323896, y: 1.8810186, z: 0.36495718}
-  m_Center: {x: 0, y: 4.7416453, z: 0}
+  m_Size: {x: 4.5323896, y: 1.0839047, z: 0.36495718}
+  m_Center: {x: 0, y: 5.1402025, z: 0}
 --- !u!65 &3332292178674530362
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24404,8 +24404,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.5323896, y: 1.7786603, z: 0.36495718}
-  m_Center: {x: 0, y: 0.7897546, z: 0}
+  m_Size: {x: 4.5323896, y: 0.9311161, z: 0.36495718}
+  m_Center: {x: 0, y: 0.36598253, z: 0}
 --- !u!114 &8941889428875694064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34272,7 +34272,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8742500112356807276}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.7227335, z: 0}
+  m_LocalPosition: {x: 0, y: 2.662, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children: []
   m_Father: {fileID: 4008748587855741054}
@@ -34289,7 +34289,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.70123374
+  m_Radius: 0.82
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1487097312025423604
 PrefabInstance:

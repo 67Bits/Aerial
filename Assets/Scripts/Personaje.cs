@@ -51,7 +51,7 @@ public class Personaje : MonoBehaviour
                 else
                 {
                     paredActual = other.gameObject.GetComponent<Diamante>().pared_anexa;
-                    Invoke("desaparecerPared", 1f);
+                    //Invoke("desaparecerPared", 10f);
                     StartCoroutine("desactivarAnimacionDiamantes2");
                 }
 
@@ -66,7 +66,7 @@ public class Personaje : MonoBehaviour
                 });
 
             }
-            // Tijeras
+            // Pared
             else if (other.gameObject.layer == 10)
             {
                 print("layer10");
@@ -124,7 +124,7 @@ public class Personaje : MonoBehaviour
     public void quitarTextoCelebracion()
     {
         nivelControl.txt_celebracion.text = "";
-        desaparecerPared();
+        //desaparecerPared();
     }
 
     public void desaparecerPared()

@@ -26,7 +26,9 @@ public class Pared : MonoBehaviour
         }
         if (playSil)
         {
+            print("silueta");
             shadowFeedback?.PlayFeedbacks();
+            ShineFeedback?.PlayFeedbacks();
             StartCoroutine(FadeSil());
         }
     }
@@ -36,8 +38,8 @@ public class Pared : MonoBehaviour
         animatedWall.GetComponent<Animator>().SetTrigger("fall");
         dissapear = false;
         yield return new WaitForSeconds(1.9f);
-        //gameObject.SetActive(false);
-        print("dade");
+        gameObject.SetActive(false);
+        print("le di a la pared");
     }
 
     IEnumerator FadeSil()
@@ -45,7 +47,9 @@ public class Pared : MonoBehaviour
         playSil = false;
         yield return new WaitForSeconds(0.8f);
         silueta.SetActive(false);
-        if(dissapear)
-            StartCoroutine(Fade());
+        print("silueta desactivada");
+        yield return new WaitForSeconds(0.8f);
+        gameObject.SetActive(false);
+        print("le di a la silueta");
     }
 }
