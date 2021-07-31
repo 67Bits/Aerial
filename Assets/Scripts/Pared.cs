@@ -37,7 +37,7 @@ public class Pared : MonoBehaviour
     {
         animatedWall.GetComponent<Animator>().SetTrigger("fall");
         dissapear = false;
-        yield return new WaitForSeconds(1.9f);
+        yield return new WaitForSeconds(1.0f);
         gameObject.SetActive(false);
         print("le di a la pared");
     }
@@ -48,7 +48,7 @@ public class Pared : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         silueta.SetActive(false);
         print("silueta desactivada");
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.4f);
         gameObject.SetActive(false);
         print("le di a la silueta");
     }

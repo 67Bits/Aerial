@@ -5052,7 +5052,7 @@ MonoBehaviour:
     Quantized: 0
     TargetBPM: 120
   DebugActive: 0
-  TargetRenderer: {fileID: 430345394224737132}
+  TargetRenderer: {fileID: 6551604548771745618}
   Method: 0
   Loop: 1
   AlwaysNewMaterial: 1
@@ -10383,6 +10383,12 @@ GameObject:
 --- !u!4 &5377532686355166269 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: aa8b85433a7efd6489a40b5a082e9cb8,
+    type: 3}
+  m_PrefabInstance: {fileID: 5560375445200638934}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6551604548771745618 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: aa8b85433a7efd6489a40b5a082e9cb8,
     type: 3}
   m_PrefabInstance: {fileID: 5560375445200638934}
   m_PrefabAsset: {fileID: 0}

@@ -10,6 +10,10 @@ public class Personaje : MonoBehaviour
     [SerializeField]
     private GameObject particula_diamante1;
 
+    public float tiempoFlash;
+    Color originalColor;
+    public Renderer rendererPersonaje;
+
     public CinemachineImpulseSource shake;
 
     public Animator animacion_personaje;
@@ -21,6 +25,21 @@ public class Personaje : MonoBehaviour
     private GameObject paredActual;
 
     public DiamanteADiamante diamanteADiamante;
+
+    void Start()
+    {
+        originalColor = rendererPersonaje.material.color;
+    }
+
+    void FlashRed()
+    {
+        rendererPersonaje.material.color = Color.red;
+        Invoke("ResetColor", tiempoFlash);
+    }
+    void ResetColor()
+    {
+        rendererPersonaje.material.color = originalColor;
+    }
 
     public void OnTriggerEnter(Collider other)
     {
@@ -69,6 +88,7 @@ public class Personaje : MonoBehaviour
             // Pared
             else if (other.gameObject.layer == 10)
             {
+                FlashRed();
                 print("layer10");
                 paredActual = other.gameObject;
                 other.gameObject.layer = 0;
