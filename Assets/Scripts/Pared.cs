@@ -28,7 +28,7 @@ public class Pared : MonoBehaviour
         {
             print("silueta");
             shadowFeedback?.PlayFeedbacks();
-            ShineFeedback?.PlayFeedbacks();
+            //ShineFeedback?.PlayFeedbacks();
             StartCoroutine(FadeSil());
         }
     }

@@ -92,6 +92,13 @@ public class Personaje : MonoBehaviour
                 paredActual = other.gameObject;
                 other.gameObject.layer = 0;
                 //other.gameObject.SetActive(false);
+                float distancia = Mathf.Abs(transform.position.y + 0.94f - paredActual.GetComponent<Pared>().silueta.transform.position.y);
+                if (distancia > 1.7f)
+                {
+                    nivelControl.txt_celebracion.text = "Fail";
+                    print("distancia fail: " + distancia);
+                }
+                Invoke("quitarTextoCelebracion", 1);
                 Invoke("desaparecerPared", 0.5f);
                 nivelControl.hacerDaño(1);
 
