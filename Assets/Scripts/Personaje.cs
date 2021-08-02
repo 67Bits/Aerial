@@ -98,6 +98,11 @@ public class Personaje : MonoBehaviour
                     nivelControl.txt_celebracion.text = "Fail";
                     print("distancia fail: " + distancia);
                 }
+                else if (distancia > 0.7f)
+                {
+                    nivelControl.txt_celebracion.text = "Almost perfect";
+                    print("distancia almost: " + distancia);
+                }
                 Invoke("quitarTextoCelebracion", 1);
                 Invoke("desaparecerPared", 0.5f);
                 nivelControl.hacerDaño(1);
