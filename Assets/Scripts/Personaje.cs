@@ -92,7 +92,7 @@ public class Personaje : MonoBehaviour
                 paredActual = other.gameObject;
                 other.gameObject.layer = 0;
                 //other.gameObject.SetActive(false);
-                Invoke("desaparecerPared", 1);
+                Invoke("desaparecerPared", 0.5f);
                 nivelControl.hacerDaño(1);
 
                 shake.GenerateImpulse();
