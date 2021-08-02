@@ -89,7 +89,6 @@ public class Personaje : MonoBehaviour
             else if (other.gameObject.layer == 10)
             {
                 FlashRed();
-                print("layer10");
                 paredActual = other.gameObject;
                 other.gameObject.layer = 0;
                 //other.gameObject.SetActive(false);
@@ -127,14 +126,17 @@ public class Personaje : MonoBehaviour
                 if (distancia > 1.7f)
                 {
                     nivelControl.txt_celebracion.text = "Fail";
+                    print("distancia fail: " + distancia);
                 }
                 else if (distancia > 0.7f)
                 {
                     nivelControl.txt_celebracion.text = "Almost perfect";
+                    print("distancia almost: " + distancia);
                 }
                 else if (distancia < 0.7f)
                 {
                     nivelControl.txt_celebracion.text = "Perfect";
+                    print("distancia perfect: " + distancia);
                 }
                 Invoke("quitarTextoCelebracion", 1);
             }

@@ -19614,8 +19614,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.5323896, y: 1.7864051, z: 0.36495718}
-  m_Center: {x: 0, y: 5.3322926, z: 0}
+  m_Size: {x: 4.5323896, y: 2.2932343, z: 0.36495718}
+  m_Center: {x: 0, y: 5.0788784, z: 0}
 --- !u!65 &7803035247788439315
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19627,8 +19627,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.5323896, y: 0.3594222, z: 0.36495718}
-  m_Center: {x: 0, y: 0.17413592, z: 0}
+  m_Size: {x: 4.5323896, y: 0.5370741, z: 0.36495718}
+  m_Center: {x: 0, y: 0.26296186, z: 0}
 --- !u!114 &2716025962045634037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24791,6 +24791,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114672348668105304, guid: accd6085d9a335247b10d45b6e6a9399,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 198706918190050108, guid: accd6085d9a335247b10d45b6e6a9399,
         type: 3}
       propertyPath: playOnAwake
@@ -24954,6 +24959,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 1b2f8e049c22af2438cac65a921271a6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400010, guid: 1b2f8e049c22af2438cac65a921271a6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 1b2f8e049c22af2438cac65a921271a6, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 1b2f8e049c22af2438cac65a921271a6, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 1b2f8e049c22af2438cac65a921271a6, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 1b2f8e049c22af2438cac65a921271a6, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 1b2f8e049c22af2438cac65a921271a6, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 1b2f8e049c22af2438cac65a921271a6, type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
