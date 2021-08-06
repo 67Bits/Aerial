@@ -104,7 +104,7 @@ public class Personaje : MonoBehaviour
                     print("distancia almost: " + distancia);
                 }
                 Invoke("quitarTextoCelebracion", 1);
-                Invoke("desaparecerPared", 0.3f);
+                Invoke("desaparecerPared", 0.1f);
                 nivelControl.hacerDaño(1);
 
                 shake.GenerateImpulse();
